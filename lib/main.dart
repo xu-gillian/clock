@@ -1,5 +1,6 @@
 import 'package:clock_dev/stopwatch_page.dart';
 import 'package:clock_dev/timer_page.dart';
+import 'package:clock_dev/workclock.dart';
 import 'package:flutter/material.dart';
 
 import 'homepage.dart';
@@ -27,7 +28,7 @@ class MyBottomNavigationBar extends StatefulWidget {
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomePage(),
+    ClockPage(),
     StopwatchPage(),
     TimerPickerPage(),
   ];
