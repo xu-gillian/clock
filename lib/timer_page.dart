@@ -11,7 +11,6 @@ class TimerPickerPage extends StatefulWidget {
 }
 
 class _TimerPickerPageState extends State<TimerPickerPage> {
-
   Duration duration = Duration(hours: 0, minutes: 0, seconds: 0);
   int _seconds = 0;
   int _minutes = 0;
@@ -70,16 +69,16 @@ class _TimerPickerPageState extends State<TimerPickerPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-      title: Text('Timer'),
-      backgroundColor: Colors.black,
-    ),
+        appBar: AppBar(
+          title: Text('Timer'),
+          backgroundColor: Colors.black,
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               buildTimePicker(),
-              const SizedBox(height: 24),
+              const SizedBox(height: 40),
               ButtonWidget(onClicked: () {
                 _hours = duration.inHours;
                 _minutes = duration.inMinutes.remainder(60);
@@ -124,7 +123,7 @@ class _TimerPickerPageState extends State<TimerPickerPage> {
                         '$_textHolder',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 21,
+                          fontSize: 18,
                         ),
                       ),
                     ),

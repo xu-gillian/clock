@@ -62,22 +62,40 @@ class _StopwatchPageState extends State<StopwatchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Stopwatch'), backgroundColor: Colors.black,),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(formatTime(_stopwatch.elapsedMilliseconds),
-                  style: TextStyle(fontSize: 48.0, color: Colors.white)),
-              ElevatedButton(
-                  onPressed: handleStartStop,
+      appBar: AppBar(
+        title: Text('Stopwatch'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(formatTime(_stopwatch.elapsedMilliseconds),
+                style: TextStyle(fontSize: 48.0, color: Colors.white)),
+            SizedBox(
+              height: 30,
+            ),
+            RaisedButton(
+              onPressed: handleStartStop,
+              shape: CircleBorder(side: BorderSide(color: Colors.black)),
+              child: Padding(
+                  padding: const EdgeInsets.all(38.0),
                   child: Text(_stopwatch.isRunning ? 'Stop' : 'Start')),
-              ElevatedButton(
-                  onPressed: resetTimer,
-                  child: Text(_stopwatch.isRunning ? 'Reset' : 'Reset')),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            RaisedButton(
+              onPressed: resetTimer,
+              shape: CircleBorder(side: BorderSide(color: Colors.black)),
+              child: Padding(
+                padding: const EdgeInsets.all(38.0),
+                child: Text(_stopwatch.isRunning ? 'Reset' : 'Reset'),
+              ),
+            )
+          ],
         ),
-     );
+      ),
+    );
   }
 }
